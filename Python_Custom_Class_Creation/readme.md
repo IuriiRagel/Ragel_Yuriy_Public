@@ -9,5 +9,5 @@ Both .py files have to be in the same folder
 In script 03_rectangle.py I create a new Classes for geometric shapes, and method to calculate their area.
 I then import the newly created class to a new script 04_rectangle_2.py and call the calculate area method on it
 
-<h3> <i> Guest_List_Class: <i> example of creating a 'Guest' class and its usage in a different script </h3>
+<h3> <i> Guest_List_Class: </i> example of creating a 'Guest' class and its usage in a different script </h3>
 Example of using Guest class list for creating a list of guests for the event
