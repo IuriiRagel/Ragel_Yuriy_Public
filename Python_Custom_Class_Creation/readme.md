@@ -11,3 +11,5 @@ I then import the newly created class to a new script 04_rectangle_2.py and call
 
 <h3> <i> Guest_List_Class: </i> example of creating a 'Guest' class and its usage in a different script </h3>
 Example of using Guest class list for creating a list of guests for the event
+
+<h3> <i> Class_Client </i> example of creating a custom class for storing Client information  </h3>
