@@ -1,3 +1,0 @@
-Task 16.8.1 and 16.8.2
-Creation of classes Rectangle, Square, Circle in file 'rectangle.py' with attributes and methods to calculate area
-In file 'rectangle_2.py' we import created classes, create new objects and calculate their areas
