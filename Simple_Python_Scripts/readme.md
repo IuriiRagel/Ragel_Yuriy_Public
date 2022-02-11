@@ -4,3 +4,4 @@
   <li> <b> tickets_discount_ver_2: </b> a diffferent realization of the same script, using lists to store values
   <li> <b> deposit_percent: </b> takes dictionary with bank name and interest rate and calculates maximum deposit amount iterating via for loop
   <li> <b> Tasks_queue_FIFO </b> script that collects tasks into a queue and executes them in FIFO (first in, first out) principle.
+  <li> <b> Numbers_game </b> this script creates a list of random integers in range (0,9) and asks user to guess all numbers in it
