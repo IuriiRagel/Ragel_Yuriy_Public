@@ -1,7 +1,7 @@
-import telebot, requests, json
+import telebot, requests, json, random
 # библиотеки requests и json нужны для получения топ криптовалют (команда /top)
 
-from config import keys, TOKEN
+from config import keys, TOKEN, full_key
 # словарь keys составляется каждый раз при запуске скрипта бота из API запроса на топ валют
 # по умолчанию словарь keys содержит USD, EUR + top-10 криптовалют за последние 24 часа
 # для изменения размера словаря достаточно изменить переменную N_currencies в config.py
@@ -20,7 +20,8 @@ def start(message: telebot.types.Message):
            '\n\n Список команд бота:' \
            '\n /start -- инструкция использования бота' \
            '\n /values -- список доступных валют' \
-           '\n /top -- Топ-10 криптовалют за 24 часа' \
+           '\n /top -- Топ-10 криптовалют за 24 часа'\
+           '\n /hint -- подсказать случайную криптовалюту'\
            '\n /help -- помощь'
     bot.reply_to(message,text)
 
@@ -33,6 +34,17 @@ def help(message: telebot.types.Message):
            '\nЕсли в названии криптовалюты есть пробел, замените его на _:' \
            '\nнапример binance_coin или shiba_inu"'
     bot.reply_to(message,text)
+
+@bot.message_handler(commands=['hint'])
+def hint(message: telebot.types.Message):
+    n = random.randint(0, len(list(full_key)))
+    random_name = list(full_key)[n]
+    text = f'Попробуйте новую криптовалюту не из топ списка! Как насчет {random_name}?' \
+           f'\n(например {random_name} dollar 10)' \
+           f'\nимейте в виду, некоторые малоизвестные' \
+           f'\nкриптовалюты могут не иметь истории недавних торгов,' \
+           f'\nпотому не имеют информации об обменном курсе'
+    bot.reply_to(message, text)
 
 # обработчик команды values
 @bot.message_handler(commands=['values'])
