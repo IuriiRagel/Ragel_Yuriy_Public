@@ -24,7 +24,18 @@ currencies = json.loads(top_list.content)['Data']
 
 for i in range(len(currencies)):
     currency_code = currencies[i]['CoinInfo']['Name']
-    currency_name = currencies[i]['CoinInfo']['FullName'].lower()
+    currency_name = currencies[i]['CoinInfo']['FullName'].lower().replace(' ','_')
     if currency_name not in keys.keys():
         keys[currency_name] = currency_code
 
+# здесь мы отправляем API запрос на получение списка всех криптовалют (около 7000)
+# это даст возможность искать валюту не только среди ограниченного набора keys
+# но и среди всех доступных на сайте (благодаря этому пользователь сможет сделать запрос например
+# monacoin dollar 30 и получить ответ
+url='https://min-api.cryptocompare.com/data/all/coinlist'
+all_coins = json.loads(requests.get(url).content)['Data']
+name = 'bitcoin'
+full_key = {}
+
+for key in all_coins:
+    full_key[all_coins[key]['CoinName'].replace(' ', '_').lower()]=key

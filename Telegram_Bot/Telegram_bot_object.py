@@ -30,7 +30,8 @@ def help(message: telebot.types.Message):
     text = 'Для конвертации введите две валюты через пробел и количество валюты, например:' \
            '\nbitcoin dollar 10' \
            '\nЕсли количество валюты не введено, то будет выведена стоимость 1 единицы' \
-           ''
+           '\nЕсли в названии криптовалюты есть пробел, замените его на _:' \
+           '\nнапример binance_coin или shiba_inu"'
     bot.reply_to(message,text)
 
 # обработчик команды values
@@ -69,7 +70,9 @@ def convert(message: telebot.types.Message):
         if len(values) != 3:
             raise APIException("Простите, я не смог распознать команду.\nВведите две валюты через пробел и количество. Например:"
                                "\nbitcoin dollar 10"
-                               "\nвведите /values для получения списка валют")
+                               "\nвведите /values для получения списка валют "
+                               "\nесли в названии криптовалюты есть пробел, замените его на _:"
+                               "\nнапример binance_coin или shiba_inu")
 
         quote, base, amount = values
         total_base = CryptoConverter.get_price(quote, base, amount)
