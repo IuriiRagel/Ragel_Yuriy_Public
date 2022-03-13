@@ -1,4 +1,12 @@
-<h3>10 new tests: </h3>
+<h3> api.py: two new methods added: </h3>
+<ol>
+  <li> <b> add_new_pet_no_photo </b> -- REST POST /api/create_pet_simple -- добавление питомца без фото </li>
+  <li> <b> add_pet_photo </b> -- REST POST /api/pets/set_photo/{pet_id} -- обновление фото существующего питомца </li>
+  
+</ol>
+
+
+<h3> test_pet_friends.py: 10 new tests: </h3>
 
 <ol> 
   <li>Проверяем что запрос api ключа возвращает статус 403 при некорректном вводе email и корректном password</li>
