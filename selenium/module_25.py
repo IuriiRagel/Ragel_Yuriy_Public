@@ -4,9 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-#driver = webdriver.Chrome()
-#driver.get('http://petfriends1.herokuapp.com/login')
-
 @pytest.fixture(autouse=True)
 def testing():
    pytest.driver = webdriver.Chrome('./chromedriver.exe')
