@@ -5,5 +5,3 @@ CONFIGS = {"Driver": webdriver.Chrome(),
            "username": "jdoe1786@icloud.com",
            "password": "123456",
            "search_key": "bed"}
-VAR = {"data_asin": "",
-       "item": ""}
