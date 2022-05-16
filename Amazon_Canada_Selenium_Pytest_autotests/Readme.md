@@ -1,7 +1,7 @@
 <h1> Automated tests with Selenium and Pytest framework for Amazon Canada website </h1>
 
 You will find 58 tests developed for Amazon Canada testing, which test basic functionality of Amazon website
-b
+
 <h2> Prerequisites </h2>
 <ul> 
   <li> Python </li>
@@ -15,8 +15,14 @@ b
   <li> <i> configs.py </i> -- file contains configurations (email and password, search term, webdriver used for tests) </li>
   <li> <i> AmazonInteractions.py </i> -- this script contains class AmazonTest with methods for various interactions on Amazon website (sign in, sign out, product search, adding to cart, clear cart etc.). These methods are used to build particular tests </li>
   <li> <i> AmazonTestScenarios </i> -- each class inside this script represents a particular Test Scenario with detailed tests inside them. You can launch the full script or each scenario separately. See below for each Test Scenario description and tests implemented within each scenario </li>
+ </ul>
  
-  <h2> Test Scenarios and tests descriptions </h2>
+<h2> Video recording of all tests in action </h2>
+  
+  Visit this link to see all 58 tests in action: https://www.loom.com/share/ede26e5745e7438080f08b1ae0cb3396
+  
+  
+<h2> Test Scenarios and tests descriptions </h2>
   <ol type="1">
     <li> <b> TestPathToCartRegisteredUser = 8 tests </b> 
       <br> Test scenario for path to cart for a <u> signed in </u> user: open wesbite, log in, search for products, open product page, add to cart, open cart, delete from cart, sign out </li>
@@ -41,6 +47,8 @@ b
     <br>
     <li> <b> TestPostalCodeEntry = 2 tests </b>
       <br> Test scenario on adding postal code into the pop up field on main page. We are using WebDriver.Wait to wait for fields to be clickable to be able to enter a sample postal code </li>
-    
-    <h2> Important Notes </h2>
-    Please note, that in order to avoid CAPTCHA during Sign In, we have implemented time.sleep() periods to simulate slow entry of username and password. This helped to avoid the CAPTCHA. When launching script from different regions, Amazon might trigger security warning for Amazon. In that case you may use any other valid Amazon accounr credentials (just update them in configs.py file)
+  </ol>
+  
+  
+<h2> Important Notes </h2>
+Please note, that in order to avoid CAPTCHA during Sign In, we have implemented time.sleep() periods to simulate slow entry of username and password. This helped to avoid the CAPTCHA. When launching script from different regions, Amazon might trigger security warning for Amazon. In that case you may use any other valid Amazon accounr credentials (just update them in configs.py file)
