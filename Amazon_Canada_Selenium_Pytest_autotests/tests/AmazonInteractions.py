@@ -157,10 +157,8 @@ class AmazonTest:
         self.create_wishlist = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID, "atwl-dd-create-list")))
         self.create_wishlist.click()
         self.list_name_field = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID, "list-name")))
-
-        #self.driver.find_element_by_xpath('//*[@id="list-name"]')
         self.list_name_field.click()
-        self.list_name_field.send_keys('Testing_shopping_list ', now)
+        self.list_name_field.send_keys('Testing_shopping_list_', now)
         self.list_create_button = self.driver.find_element_by_xpath('//*[@id="wl-redesigned-create-list"]/span/span/input')
         self.list_create_button.click()
         time.sleep(3)

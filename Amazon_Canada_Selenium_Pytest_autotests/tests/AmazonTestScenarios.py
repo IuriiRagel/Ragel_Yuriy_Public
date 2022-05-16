@@ -42,7 +42,7 @@ class TestPathToCartRegisteredUser:
 
     def test_sign_out(self):
         amazon_class_instance = AmazonTest()
-        amazon_class_instance.signOut()
+        amazon_class_instance.signOut
         assert amazon_class_instance.Is_loggedin == False
 
 
@@ -156,7 +156,7 @@ class TestTopMenuRegisteredUsers:
 
     def test_sign_out(self):
         amazon_class_instance = AmazonTest()
-        amazon_class_instance.signOut()
+        amazon_class_instance.signOut
         assert amazon_class_instance.Is_loggedin == False
 
 
@@ -251,7 +251,7 @@ class TestPaginatorPage2SignedIn:
 
     def test_sign_out(self):
         amazon_class_instance = AmazonTest()
-        amazon_class_instance.signOut()
+        amazon_class_instance.signOut
         assert amazon_class_instance.Is_loggedin == False
 
 
@@ -300,7 +300,7 @@ class TestWishList:
 
     def test_sign_out(self):
         amazon_class_instance = AmazonTest()
-        amazon_class_instance.signOut()
+        amazon_class_instance.signOut
         assert amazon_class_instance.Is_loggedin == False
 
 
